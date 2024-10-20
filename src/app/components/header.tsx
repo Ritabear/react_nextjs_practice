@@ -9,13 +9,8 @@ const linkData = [
   { name: 'Scale', path: '/scale' }
 ]
 
-const accessLink = ['/', '/performance', '/reliability', '/scale']
-
 export default function Header() {
   const pathname = usePathname()
-  if (!accessLink.includes(pathname)) {
-    return null
-  }
   return (
     <div>
       <div className='absolute w-full z-10'>
@@ -34,10 +29,6 @@ export default function Header() {
                 {link.name}
               </Link>
             ))}
-
-            {/* <Link className={pathname === "/performance" ? "text-purple-500":""} href='/performance'>Performance</Link>
-            <Link className={pathname === "/reliability" ? "text-purple-500":""} href='/reliability'>Reliability</Link>
-            <Link className={pathname === "/scale" ? "text-purple-500":""} href='/scale'>Scale</Link> */}
           </div>
         </div>
       </div>

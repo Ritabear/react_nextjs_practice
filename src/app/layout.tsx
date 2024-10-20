@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { Inter } from 'next/font/google'
-import Header from '@/app/components/header'
+import { ABeeZee } from "next/font/google";
 // @ 是src folder
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = ABeeZee({ subsets: ['latin'], weight: "400" })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -35,7 +34,9 @@ export default function RootLayout({
         </div> */}
 
         {/* 會發現在404 header 也會出現，因為404也是children，所以要經由usePathname 區隔要出現位置的url才顯現，不然返回空，並請只能回去那個componet 設計（ex:header） */}
-        <Header/>
+
+        {/* 移到router group 了 */}
+        {/* <Header/> */}
         {children}
       </body>
     </html>
