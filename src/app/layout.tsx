@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ABeeZee } from "next/font/google";
-// @ 是src folder
+import { AntdRegistry } from '@ant-design/nextjs-registry';
+
 
 const inter = ABeeZee({ subsets: ['latin'], weight: "400" })
 
@@ -37,7 +38,7 @@ export default function RootLayout({
 
         {/* 移到router group 了 */}
         {/* <Header/> */}
-        {children}
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   )
